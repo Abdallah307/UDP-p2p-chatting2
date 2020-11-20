@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="1066.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+        <AnchorPane fx:id="peersAnchor" prefHeight="813.0" prefWidth="311.0" style="-fx-background-color: #ff6bb3;">
+            <children>
+                <Label layoutX="97.0" layoutY="35.0" text="Peers" textFill="WHITE">
+                    <font>
+                        <Font size="42.0" />
+                    </font>
+                </Label>
+                <Button fx:id="stop" disable="true" layoutX="12.0" layoutY="754.0" mnemonicParsing="false" onAction="#stopConnection" prefHeight="51.0" prefWidth="171.0" style="-fx-background-color: red; -fx-background-radius: 30;" text="Stop connection" textFill="WHITE">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Button>
+            <VBox fx:id="peersBox" layoutY="100.0" prefHeight="289.0" prefWidth="311.0" style="-fx-background-color: #d6478c;" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="chattingApplicationAnchor" layoutX="312.0" prefHeight="84.0" prefWidth="754.0" style="-fx-background-color: #ff6bb3;">
+            <children>
+                <Label layoutX="210.0" layoutY="20.0" text="Chatting Application " textFill="WHITE">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="322.0" layoutY="101.0" text="Start Chatting :">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Separator layoutX="311.0" layoutY="407.0" prefHeight="0.0" prefWidth="754.0" style="-fx-background-color: #1B9C5E; -fx-border-color: #1B9C5E;" />
+        <TextField fx:id="username" layoutX="354.0" layoutY="166.0" promptText="Enter yur name" />
+        <TextField fx:id="userIP" layoutX="354.0" layoutY="220.0" promptText="Enter your IP" />
+        <TextField fx:id="portNumber" layoutX="354.0" layoutY="283.0" promptText="Enter Port Number" />
+        <Button fx:id="connect" layoutX="475.0" layoutY="349.0" mnemonicParsing="false" onAction="#setInformations" prefHeight="51.0" prefWidth="117.0" style="-fx-background-color: #1B9C5E; -fx-background-radius: 30;" text="Connect" textFill="WHITE">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <Separator layoutX="625.0" layoutY="84.0" orientation="VERTICAL" prefHeight="326.0" prefWidth="6.0" style="-fx-background-color: #1B9C5E; -fx-border-color: #1B9C5E;" />
+        <Label layoutX="639.0" layoutY="95.0" text="Type a message :">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="messageBox" layoutX="639.0" layoutY="131.0" prefHeight="158.0" prefWidth="378.0" promptText="Enter your message ..." style="-fx-background-radius: 200; -fx-background-radius: transparent;" />
+        <Button fx:id="send" layoutX="918.0" layoutY="296.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="51.0" prefWidth="117.0" style="-fx-background-color: #1B9C5E; -fx-background-radius: 30;" text="Send" textFill="WHITE">
+            <font>
+                <Font size="17.0" />
+            </font>
+        </Button>
+        <TextArea fx:id="board" layoutX="593.0" layoutY="411.0" prefHeight="403.0" prefWidth="470.0" />
+      <Label layoutX="329.0" layoutY="426.0" text="Add Peer To my List">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="peerName" layoutX="329.0" layoutY="484.0" promptText="New Peer Name" />
+      <TextField fx:id="peerIP" layoutX="329.0" layoutY="594.0" promptText="New Peer IP" />
+      <TextField fx:id="peerPort" layoutX="329.0" layoutY="537.0" promptText="New Peer Port Number" />
+      <Button fx:id="addPeerButton" layoutX="467.0" layoutY="657.0" mnemonicParsing="false" onAction="#addPeer" prefHeight="58.0" prefWidth="117.0" style="-fx-background-color: #1B9C5E; -fx-background-radius: 30;" text="Add" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Button>
+      <Separator layoutX="634.0" layoutY="355.0" prefHeight="5.0" prefWidth="431.0" />
+      <Button fx:id="chooseButton" layoutX="911.0" layoutY="363.0" mnemonicParsing="false" onAction="#chooseFile" prefHeight="37.0" prefWidth="65.0" style="-fx-background-color: #1B9C5E;" text="open" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label layoutX="639.0" layoutY="375.0" text="File :">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="fileName" layoutX="689.0" layoutY="369.0" prefHeight="37.0" prefWidth="221.0" text="No file">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="sendFile" layoutX="986.0" layoutY="363.0" mnemonicParsing="false" onAction="#sendTxtFile" prefHeight="37.0" prefWidth="74.0" style="-fx-background-color: #1B9C5E;" text="Send" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>
